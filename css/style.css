@@ -24,30 +24,11 @@ body {
   color: #fff;
   border-radius: 0.5rem;
   transition: background-color 250ms;
+  border: none;
+  outline: none;
 }
 .btn:hover {
   background-color: #235af2;
-}
-.sect-heading h2 {
-  font-size: 1.7rem;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-.sect-heading h2::before,
-.sect-heading h2::after {
-  content: "";
-  width: 50px;
-  height: 4px;
-  background: var(--primary-color);
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-}
-.sect-heading h2::before {
-  margin-right: 25px;
-}
-.sect-heading h2::after {
-  margin-left: 25px;
 }
 .container {
   padding: 0 3%;
@@ -59,7 +40,37 @@ body {
   }
 }
 .sect {
-  padding: 5% 0;
+  padding: 5rem 0;
+}
+@media only screen and (max-width: 870px) {
+  .sect {
+    padding: 3rem 0;
+  }
+}
+.sect-heading h2 {
+  position: relative;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+.sect-heading h2::before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  /* top: 1.5rem; */
+  left: -0.5rem;
+  background-color: var(--primary-color);
+}
+
+input,
+button {
+  font-family: "Montserrat", sans-serif;
+}
+input::placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+.clickable {
+  cursor: pointer;
 }
 
 /* General ends */
@@ -67,10 +78,15 @@ body {
 /* Header starts */
 .header {
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* Change to 90vh if I decide to use Register form*/
   background-color: #85ffbd;
   background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
   position: relative;
+}
+@media only screen and (max-height: 450px) {
+  .header {
+    height: 600px;
+  }
 }
 /* .header::after {
   content: "";
@@ -89,7 +105,8 @@ body {
   z-index: 100;
   padding: 15px 0;
   background-color: #fff;
-  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+  box-shadow: 0 1px 4px #85ffbd;
+  /* box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15); */
 }
 .header nav .container {
   display: flex;
@@ -221,8 +238,15 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+@media only screen and (min-width: 870px) {
+  .hero-details {
+    flex-basis: 45%;
+  }
+}
 .hero-details h1 {
   font-size: 2.5rem;
+  font-weight: 500;
 }
 .hero-details p {
   margin: 0.5rem 0 1.5rem 0;
@@ -250,6 +274,59 @@ body {
   display: block;
 }
 /* Hero ends */
+
+/* Register Area */
+/* @media only screen and (max-width: 870px) {
+  .hero {
+    display: grid;
+    grid-gap: 1rem;
+  }
+}
+.register-area {
+  flex-basis: 30%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  bottom: -10rem;
+}
+.register {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+}
+@media only screen and (max-width: 870px) {
+  .register-area {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #f2f5f67a;
+    display: flex;
+    z-index: 150;
+  }
+  .register {
+    margin: auto;
+    width: 90%;
+  }
+}
+.register h5 {
+  margin-bottom: 1.5rem;
+}
+.register form {
+  display: grid;
+  grid-gap: 1rem;
+}
+.register form input {
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid grey;
+  outline: none;
+}
+.register form .form-btn .btn {
+  padding: 0.5rem 1rem;
+} */
+
 /* Header ends */
 
 /* About starts */
@@ -267,19 +344,6 @@ body {
 .about-details {
   flex-basis: 45%;
 }
-.about-details h2 {
-  position: relative;
-  margin-bottom: 2rem;
-}
-.about-details h2::before {
-  content: "";
-  width: 3px;
-  height: 100%;
-  position: absolute;
-  /* top: 1.5rem; */
-  left: -0.8rem;
-  background-color: var(--primary-color);
-}
 .about-img {
   flex-basis: 50%;
 }
@@ -287,6 +351,33 @@ body {
   width: 100%;
 }
 /* About ends */
+
+/* Services starts */
+.service-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.service-item {
+  border: 1px solid #ebebeb;
+}
+.service-item .inner-box {
+  border-top: 4px solid transparent;
+  padding: 2rem;
+  transition: all 500ms ease;
+}
+.service-item:hover .inner-box {
+  border-top-color: var(--primary-color);
+  background-color: #f2f5f6;
+}
+.service-item h5 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+.service-item p {
+  color: #666;
+}
+/* Services ends */
 
 /* Testimonial starts */
 .testi-heading {
@@ -333,29 +424,3 @@ body {
   font-weight: 500;
 }
 /* Testimonial ends */
-
-/* Services starts */
-.service-body {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-.service-item {
-  border: 1px solid #ebebeb;
-}
-.service-item .inner-box {
-  border-top: 4px solid transparent;
-  padding: 2rem;
-  transition: all 500ms ease;
-}
-.service-item:hover .inner-box {
-  border-top-color: var(--primary-color);
-  background-color: #f2f5f6;
-}
-.service-item h5 {
-  font-size: 20px;
-  margin: 1rem 0;
-}
-.service-item p {
-  color: #666;
-}
-/* Services ends */
