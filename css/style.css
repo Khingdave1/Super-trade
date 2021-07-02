@@ -15,9 +15,13 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   position: relative;
+  color: #212121;
 }
 
 /* General starts */
+a {
+  color: #212121;
+}
 .btn {
   display: inline-block;
   background-color: var(--primary-color);
@@ -50,6 +54,7 @@ body {
 .sect-heading h2 {
   position: relative;
   margin-bottom: 2rem;
+  font-size: 30px;
   font-weight: 500;
 }
 .sect-heading h2::before {
@@ -249,7 +254,7 @@ input::placeholder {
   font-weight: 500;
 }
 .hero-details p {
-  margin: 0.5rem 0 1.5rem 0;
+  margin: 0.5rem 0 2rem 0;
 }
 @media only screen and (max-width: 768px) {
   .hero-details h1 {
@@ -375,7 +380,7 @@ input::placeholder {
   margin: 1rem 0;
 }
 .service-item p {
-  color: #666;
+  color: #666666;
 }
 /* Services ends */
 
@@ -410,7 +415,7 @@ input::placeholder {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  background-color: grey;
+  background-color: #ebebeb;
   width: 50px;
   height: 2px;
 }
@@ -418,7 +423,7 @@ input::placeholder {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid grey;
+  border: 2px solid #ebebeb;
 }
 .testi-item figure figcaption {
   font-weight: 500;
