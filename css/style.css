@@ -343,6 +343,7 @@ h5 {
   border-radius: 50%;
   padding: 8px;
   animation: chat-bot 0.5s ease-in-out infinite;
+  z-index: 100;
 }
 .chat-bot:hover {
   animation-play-state: paused;
