@@ -37,3 +37,9 @@ function linkAction() {
   toggleMenu.classList.remove("open-menu");
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
+
+/*===== UPDATE THE ELEMENT TO CURRENT YEAR =====*/
+// Update the element to the current year //
+document
+  .getElementById("copyright")
+  .appendChild(document.createTextNode(new Date().getFullYear()));
