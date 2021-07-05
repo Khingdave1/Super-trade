@@ -23,3 +23,17 @@ window.addEventListener("click", (e) => {
     regArea.classList.remove("show-modal");
   }
 });
+
+/*===== ACTIVE AND REMOVE MENU =====*/
+const navLink = document.querySelectorAll(".nav-link");
+
+function linkAction() {
+  //   Active link
+  navLink.forEach((n) => n.classList.remove("active-link"));
+  this.classList.add("active-link");
+
+  //   Remove menu mobile
+  navList.classList.remove("open-menu");
+  toggleMenu.classList.remove("open-menu");
+}
+navLink.forEach((n) => n.addEventListener("click", linkAction));
